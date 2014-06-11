@@ -14,6 +14,22 @@ class TestSort(unittest.TestCase):
         sorted_b = xsort.insertion_sort(b)
         self.assertEqual(sorted_b, [1, 1, 2, 2, 5, 6, 9])
 
+        c = [3, 1, 2]
+        sorted_c = xsort.insertion_sort(c)
+        self.assertEqual(sorted_c, [1, 2, 3])
+
+    def test_insertion_sort_descend(self):
+        a = [1, 3, 2]
+        sorted_a = xsort.insertion_sort_descend(a)
+        self.assertEqual(sorted_a, [3, 2, 1])
+
+        b = [1, 1, 5, 6, 2, 2, 9]
+        sorted_b = xsort.insertion_sort_descend(b)
+        self.assertEqual(sorted_b, [9, 6, 5, 2, 2, 1, 1])
+
+        c = [3, 1, 2]
+        sorted_c = xsort.insertion_sort_descend(c)
+        self.assertEqual(sorted_c, [3, 2, 1])
 
 if __name__ == "__main__":
     unittest.main()

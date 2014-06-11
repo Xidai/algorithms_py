@@ -9,11 +9,22 @@ def insertion_sort(a):
     for i in range(1, len(a)):
         key = a[i]
         j = i - 1
-        for j in range(i - 1, -1, -1):
-            if key >= a[j]:
-                break
-            else:
-                a[j + 1] = a[j]
+        while j >= 0 and key < a[j]:
+            a[j + 1] = a[j]
+            j -= 1
+
+        a[j + 1] = key
+
+    return a
+
+
+def insertion_sort_descend(a):
+    for i in range(1, len(a)):
+        key = a[i]
+        j = i - 1
+        while j >= 0 and key > a[j]:
+            a[j + 1] = a[j]
+            j -= 1
 
         a[j + 1] = key
 
