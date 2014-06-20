@@ -70,7 +70,3 @@ def merge(a, p, q, r):
         else:
             a[k] = right[j]
             j += 1
-
-    return a
-
-
