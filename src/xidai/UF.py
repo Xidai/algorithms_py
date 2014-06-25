@@ -5,7 +5,7 @@ class UF:
     def __init__(self, n):
         self.id = []
         for i in range(0, n):
-            self.id[i] = i
+            self.id.append(i)
 
     def connected(self, p, q):
         return self.id[p] == self.id[q]
@@ -23,7 +23,7 @@ class QuickUnionUF:
     def __init__(self, n):
         self.id = []
         for i in range(0, n):
-            self.id[i] = i
+            self.id.append(i)
 
     def root(self, i):
         if self.id[i] == i:
@@ -45,8 +45,8 @@ class WeightedQuickUnionUF:
         self.id = []
         self.size = []
         for i in range(0, n):
-            self.id[i] = i
-            self.size[i] = 1
+            self.id.append(i)
+            self.size.append(1)
 
     def root(self, i):
         if self.id[i] == i:
@@ -61,7 +61,7 @@ class WeightedQuickUnionUF:
         root_p = self.root(p)
         root_q = self.root(q)
         if root_p != root_q:
-            if self.size[root_p] <= self.size[root_q]:
+            if self.size[root_p] < self.size[root_q]:
                 self.id[root_p] = root_q
                 self.size[root_q] += self.size[root_p]
             else:
